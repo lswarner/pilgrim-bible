@@ -1,0 +1,606 @@
+@font-face {font-family: "Grotesque MT";
+    src: url("//db.onlinewebfonts.com/t/d8b55475a2a5600e13e4f07ad65fc651.eot");
+    src: url("//db.onlinewebfonts.com/t/d8b55475a2a5600e13e4f07ad65fc651.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/d8b55475a2a5600e13e4f07ad65fc651.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/d8b55475a2a5600e13e4f07ad65fc651.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/d8b55475a2a5600e13e4f07ad65fc651.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/d8b55475a2a5600e13e4f07ad65fc651.svg#Grotesque MT") format("svg");
+}
+
+@font-face{font-family: "Arnhem";
+  src: url("https://github.com/callumflack/folio-v5/blob/master/fonts/arnhem-normalsc-webfont.woff")  format("woff");
+}
+
+body, p {
+  font-family: "Arnhem", serif;
+}
+h1, h2, h3, h4, a, .button {
+  font-family: "Grotesque MT", Roboto, sans-serif;
+}
+
+h5, h6{
+  font-family: "Roboto", "Arial", sans-serif;
+}
+
+body {
+  font-size: 14pt;
+  line-height: 24pt;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li{
+  list-style-type: none;
+}
+
+.section  a  {
+  text-decoration: none;
+  font-size: 1.1em;
+  color: #000000;
+}
+  .section a:hover{
+    color: #777;
+  }
+
+h1, h2, h3, h4 {
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+
+.button{
+  color: #e6e6e6;
+  background:#0a0a0a;
+  border: none;
+  font-size: 16px;
+  border-radius: 0px;
+  width: 200px;
+  text-align: center;
+  display: block;
+  padding: 7px 0px;
+  margin: 10px auto;
+}
+
+.button:hover{
+  background: #3a3a3a;
+  color: #fff;
+  text-decoration: none;
+}
+
+.button:active{
+  transform: translateY(1px);
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row{
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.column{
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  align-items: left;
+  padding: 0px 15px;
+}
+
+.md1{
+  width: 270px !important;
+}
+.md2{
+  width: 570px !important;
+}
+.md3{
+  width: 870px !important;
+}
+.md3{
+  width: 1170px !important;
+}
+
+
+.header{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.space-list-items{
+  margin-bottom: 7px;
+}
+
+.nav{
+  display:flex;
+}
+
+  .nav-wrapper{
+    padding-left: 20px;
+    padding-right: 20px;
+    background: white;
+    color: black;
+  }
+
+  .nav li{
+    margin-left: 15px;
+  }
+
+  nav .logo-top,
+  nav .logo-bottom{
+    font-size: 32pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+  }
+  nav .logo-top{
+    color: grey;
+    margin-top: -5px;
+    margin-bottom: -30px;
+  }
+  .nav-link{
+    font-size: 18pt;
+    text-transform: uppercase;
+    color: black;
+  }
+
+
+
+.active{
+  font-weight: bold;
+}
+
+
+.collection-title{
+
+}
+
+.section {
+  border-bottom: none solid black;
+  margin-bottom: 30px;
+  padding-bottom: 10px
+}
+
+.section-name{
+
+}
+
+
+.indent{
+  padding-left: 33px;
+}
+  .indent.i2{
+    padding-left: 66px;
+  }
+  .indent.i3{
+    padding-left: 99px;
+  }
+
+.loading{
+  text-align: center;
+  margin: 10% auto;
+  font-size: 30pt;
+}
+
+
+
+.passage-space-top{
+  /*margin-top: 130px !important; /* match #cloud-of-meaning & .passage-content */
+  margin-top: 57px !important;
+}
+
+
+.passage-chapter{
+  font-weight: bold;
+  font-size: 32pt;
+  text-align: right;
+  margin-top: 3px;
+  padding-top: 6px;
+
+}
+
+.passage-verses,
+.passage-title,
+.passage-book{
+  font-size: 14pt;
+  text-align: right;
+  margin-top: 3px;
+  margin-bottom: 0px;
+}
+.passage-book{
+  margin-top: 3px; /* overridden by space-passage-top */
+  padding-top: 7px;
+}
+.passage-verses{
+  text-decoration: underline;
+}
+
+
+.passage-content,
+.passage-previous{
+  padding: 0 15px;
+  margin-top: 0px;
+  margin-top: 57px;
+}
+
+.passage-previous,
+.passage-next{
+  color: #bdbdbd;
+  height: 100px;
+  max-height: 100px; /* match .passage-space-top */
+  text-overflow: clip;
+  overflow: hidden;
+  margin-bottom: 30px;
+
+  display: none;
+}
+
+
+.passage-next{
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+
+.passage-fade-in{
+  position: relative;
+  bottom: 167px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0 0 00;
+  background-image: -moz-linear-gradient(bottom, transparent, white);
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, transparent),color-stop(1, white));
+}
+
+.passage-fade-out{
+  position: relative;
+  bottom: 180px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0 0 40px 0;
+  background-image: -moz-linear-gradient(top, transparent, white);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, transparent),color-stop(1, white));
+}
+
+
+.lexeme{
+    /* override .bg-fill's 3px thickness */
+    border-bottom: solid 6px #d3d3d3 !important;
+}
+  .lexeme:hover,
+  .lexeme:active
+  {
+    background: #d3d3d3;
+  }
+
+  /* combine with .bg-fill */
+  .bg-gold{
+    /* override .bg-fill's 3px thickness */
+    border-bottom: solid 6px #ffbf00 !important;
+  }
+
+  .bg-gold:hover,
+  .bg-gold:active{
+    /* override .bg-fill's 3px thickness */
+    background:#ffbf00 !important;
+  }
+
+.sidebar {
+  padding-left: 30px;
+}
+
+#cloud-of-meaning{
+  margin-top: 57px;
+}
+.cloud-wrapper{
+  border-top: solid #d3d3d3 5px;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  padding-left: 10px;
+  text-indent: 3px;
+}
+  .cloud-close{
+    float: right;
+    position: relative;
+    top: 4px;
+    right: -50px;
+  }
+    .cloud-close > i {
+      margin-left: -3px;
+    }
+
+  .cloud-primary{
+    padding-top: 0px;
+    margin: 6px 0 4px -2px
+  }
+  .cloud-traditional{
+
+  }
+
+  .cloud-original{
+
+  }
+
+  .cloud-description{
+    color: #3d3d3d;
+    font-family: "Grotesque MT", sans-serif;
+    font-size: 14pt;
+    line-height: 1.3em;
+  }
+
+ .cloud-suggestions > li {
+    list-style-type: disc !important;
+    margin-left: 20px;
+  }
+
+  .cloud-suggestions > li >a {
+    color: #3d3d3d;
+  }
+
+
+
+
+
+
+ .bg-fill{
+    border-bottom: solid 3px #d3d3d3;
+    background: transparent;
+    margin: 0 -3px;
+    padding: 0 3px;
+  }
+  .bg-fill:hover{
+    background: #d3d3d3;
+    transition: background 0.3s;
+    margin: 0 -3px;
+    padding: 0 3px;
+  }
+
+
+.riseup{
+  background-size: 200% 200%;
+  background-image: linear-gradient(to top, #A72424 50%, transparent 50%);
+
+  -webkit-transition: background-position 300ms, color 300ms ease, border-color 300ms ease;
+  -moz-transition: background-position 300ms, color 300ms ease, border-color 300ms ease;
+  -ms-transition: background-position 300ms, color 300ms ease, border-color 300ms ease;
+  -o-transition: background-position 300ms, color 300ms ease, border-color 300ms ease;
+  transition: background-position 300ms, color 300ms ease, border-color 300ms ease;
+}
+
+.riseup:hover{
+  background-image: linear-gradient(to top, #A72424 51%, transparent 50%);
+  background-position: 0 100%;
+  -webkit-transition: background-position 300ms, color 300ms ease, border-color 300ms ease;
+  -moz-transition: background-position 300ms, color 300ms ease, border-color 300ms ease;
+  -ms-transition: background-position 300ms, color 300ms ease, border-color 300ms ease;
+  -o-transition: background-position 300ms, color 300ms ease, border-color 300ms ease;
+  transition: background-position 300ms, color 300ms ease, border-color 300ms ease;
+}
+
+
+
+/* Draft-JS
+.editor {
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  cursor: text;
+  padding: 16px;
+  border-radius: 2px;
+  margin-bottom: 2em;
+  box-shadow: inset 0px 1px 8px -3px #ABABAB;
+  background: #fefefe;
+}
+
+.editor :global(.public-DraftEditor-content) {
+  min-height: 140px;
+}
+
+.editor-options {
+  margin-bottom: 20px;
+}
+*/
+
+
+
+/*
+.DraftEditor-wrapper {
+  border: 1px solid #ddd;
+  padding: 0px 15px;
+}
+
+.DraftEditor-root {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  font-family: "Arnhem", serif;
+  font-size: 16px;
+  padding: 4px 0;
+  margin: 0;
+}
+
+.DraftEditor-editor {
+  cursor: text;
+  font-size: 16px;
+  margin: 0px 0px;
+}
+
+
+
+
+.DraftEditor-editor .public-DraftEditor-content {
+  min-height: 200px;
+}
+
+.DraftEditor-hidePlaceholder .public-DraftEditorPlaceholder-root {
+  display: none;
+}
+
+
+
+.DraftEditor-controls {
+  font-family: "Grotesque MT", sans-serif;
+  font-size: 16px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  user-select: none;
+}
+
+.DraftEditor-styleButton {
+  color: #999;
+  cursor: pointer;
+  margin-right: 8px;
+  padding: 2px 0;
+  display: inline-block;
+}
+
+  .DraftEditor-styleButton:hover,
+  .DraftEditor-StyleButton:active {
+    color: #000000;
+  }
+
+.DraftEditor-activeButton {
+  color: #000000;
+}
+
+
+.DraftEditor-editor .DraftEditor-blockquote {
+  border-left: 5px solid #eee;
+  color: #666;
+  font-family: "Grotesque MT", serif;
+  font-style: italic;
+  margin: 16px 0;
+  padding: 10px 20px;
+}
+
+pre pre, .DraftEditor-editor .public-DraftStyleDefault-pre .public-DraftStyleDefault-pre {
+  font-family: "Arnhem", serif;
+  font-size: 16px;
+  padding: 0px;
+  margin: 0;
+  tab-size: 12;
+	-moz-tab-size: 12;
+	-o-tab-size:  12;
+}
+
+.DraftEditor-ul-li-pilgrim{
+  list-style-type: none !important;
+  line-height: 1.5em;
+  margin-bottom: 10px;
+}*/
+
+.MyCustomBlock{
+  margin-left: 4.5em;
+}
+
+.superFancyCodeBlock {
+  color: #ff0000;
+  font-family: 'Hoefler Text', Georgia, serif;
+  font-style: italic;
+  text-align: center;
+}
+
+/*
+li.indent{
+  list-style-type: none;
+}
+
+.indented{
+  margin-left: 20px;
+}
+.indented .in2 {
+  margin-left: 40px;
+}
+*/
+
+
+.RichEditor-root {
+  background: #fff;
+  border: 1px solid #ddd;
+  font-family: 'Georgia', serif;
+  font-size: 14px;
+  padding: 15px;
+}
+
+.RichEditor-editor {
+  border-top: 1px solid #ddd;
+  cursor: text;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.RichEditor-editor .public-DraftEditorPlaceholder-root,
+.RichEditor-editor .public-DraftEditor-content {
+  margin: 0 -15px -15px;
+  padding: 15px;
+}
+
+.RichEditor-editor .public-DraftEditor-content {
+  min-height: 100px;
+}
+
+.RichEditor-hidePlaceholder .public-DraftEditorPlaceholder-root {
+  display: none;
+}
+
+.RichEditor-editor .RichEditor-blockquote {
+  border-left: 5px solid #eee;
+  color: #666;
+  font-family: 'Hoefler Text', 'Georgia', serif;
+  font-style: italic;
+  margin: 16px 0;
+  padding: 10px 20px;
+}
+
+.RichEditor-editor .public-DraftStyleDefault-pre {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-family: 'Inconsolata', 'Menlo', 'Consolas', monospace;
+  font-size: 16px;
+  padding: 20px;
+}
+
+.RichEditor-controls {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 14px;
+  margin-bottom: 5px;
+  user-select: none;
+}
+
+.RichEditor-styleButton {
+  color: #999;
+  cursor: pointer;
+  margin-right: 16px;
+  padding: 2px 0;
+  display: inline-block;
+}
+
+.RichEditor-activeButton {
+  color: #5890ff;
+}
+
+
+.lexeme-modal{
+  position: absolute;
+  width: 400px;
+  background-color: #ffffff;
+  padding: 32px;
+  outline: none;
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);
+  top: 51%;
+  left: 59%;
+  transform: translate(-51%, -59%);
+}

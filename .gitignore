@@ -1,0 +1,7 @@
+node_modules
+dist
+build
+firebase.json
+.firebase
+.firebasesrc
+.DS_Store
