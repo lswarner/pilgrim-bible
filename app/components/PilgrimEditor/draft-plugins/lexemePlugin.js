@@ -24,23 +24,13 @@ export const LexemeDraft = (props) => {
   const lexeme={
     id: id, primary: props.children, original: 'original', description: '', preferred:''
   }
-  console.log('lexeme: ',lexeme)
+
   return (
     <Lexeme key={id} lexeme={lexeme} clickLexeme={()=>alert(lexeme.id)}></Lexeme>
-
-    /*<a
-      className="lexeme"
-      href="https://pilgrimbible.com"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      {props.children}
-    </a>
-    */
   )
 }
 
-export const addLexemePlugin= {
+export const lexemePlugin= {
   keyBindingFn(event, {getEditorState}) {
     const editorState= getEditorState()
     const selection= editorState.getSelection()
@@ -66,17 +56,27 @@ export const addLexemePlugin= {
       return 'handled'
     }
 
-    const content= editorState.getCurrentContent()
-    const contentWithEntity= content.createEntity('LEXEME', 'MUTABLE', {id: '27'})
-    const newEditorState= EditorState.push(editorState, contentWithEntity, 'create-entity')
-    const entityKey= contentWithEntity.getLastCreatedEntityKey()
-
-    setEditorState(RichUtils.toggleLink(newEditorState, selection, entityKey))
-    return 'handled'
-
+    return setEditorState(addLexemeToEditor(19, editorState, setEditorState))
   },
   decorators: [{
     strategy: lexemeStrategy,
     component: LexemeDraft
   }]
+}
+
+export const addLexemeToEditor= (lexemeId, editorState) => {
+
+  const contentState= editorState.getCurrentContent()
+  const selection= editorState.getSelection()
+  //const block= contentState.getBlockForKey(selection.getStartKey())
+  //const selectedText= block.getText().slice(selection.getStartOffset(), selection.getEndOffset())
+
+  // set the Lexeme entity on the selected text
+  const contentWithEntity= contentState.createEntity('LEXEME', 'MUTABLE', {id: lexemeId})
+  const newEditorState= EditorState.push(
+    editorState, contentWithEntity, 'create-entity'
+  )
+  const entityKey= contentWithEntity.getLastCreatedEntityKey()
+  return RichUtils.toggleLink(newEditorState, selection, entityKey)
+
 }

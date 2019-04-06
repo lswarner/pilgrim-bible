@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
 import { Formik } from 'formik'
+import PassageContentEditor from './PassageContentEditor'
 
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid'
@@ -139,18 +140,7 @@ const AddPassage = ({changeChapter, changeVerses, classes}) => {
                 </Grid>
 
                 <Grid item xs={12}>
-                  <TextField
-                    id='content'
-                    name='content'
-                    label='Content'
-                    onChange={props.handleChange}
-                    value={props.values.content}
-                    className={classes.textArea}
-                    multiline
-                    rows='6'
-                    margin='normal'
-                    fullWidth
-                  />
+                  <PassageContentEditor />
                 </Grid>
 
                 <Grid item xs={12}>
