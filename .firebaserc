@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "pilgrim-bible": "pilgrim-bible",
+    "default": "pilgrim-bible"
+  }
+}
